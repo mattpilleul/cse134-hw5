@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Matthieu Pilleul - Web Component</title>
+    <title>Matthieu Pilleul - Extra Credit</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <meta name="theme-color" content="#000000" />
@@ -80,7 +80,7 @@
       <script>
         "use strict";
 
-        function LikeButton() {
+        function ReactButton() {
           const [count, setCount] = React.useState(0);
 
           return React.createElement(
@@ -96,7 +96,7 @@
 
         const rootNode = document.getElementById("reactContainer");
         const root = ReactDOM.createRoot(rootNode);
-        root.render(React.createElement(LikeButton));
+        root.render(React.createElement(ReactButton));
       </script>
       <script>
         new Vue({
