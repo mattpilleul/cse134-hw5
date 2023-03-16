@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matthieu Pilleul - Basic Blog</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#000000" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.5/purify.js"
+      integrity="sha512-imWtAkvkuIjQ+Y/esLu1xudz2A2zyRZ/ePZxcM7k2Izy20rgin5TdAYj/zm3Er9weQoRvL47LUUKPvohsu4Obw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DGV1YKT1ZB"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DGV1YKT1ZB");
+    </script>
+    <script defer type="text/javascript" src="assets/js/blog.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html"
+        ><img
+          src="assets/img/logofinal-sombre.png"
+          class="logo"
+          alt="Matthieu Logo"
+      /></a>
+      <input type="checkbox" id="toggleMenu" />
+      <nav>
+        <label class="navbar-toggle" for="toggleMenu">
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li>
+            <a href="index.html#testimonials">Testimonials</a>
+          </li>
+          <li><a href="nativedialogs.html">Native</a></li>
+          <li><a href="customdialog.html">Custom</a></li>
+          <div id="dropDown">
+            <li><a>Crud</a></li>
+            <div id="dropDownContent">
+              <li class="itemDropDown"><a href="crud.html">Basic</a></li>
+              <li class="itemDropDown"><a href="styledcrud.html">Styled</a></li>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <h1>Blog Posts</h1>
+        <hr />
+        <ul id="blogPosts"></ul>
+        <br />
+        <button id="addButton">New</button>
+        <br />
+        <dialog id="addDialog">
+          <form method="dialog">
+            <p>Add new blog posts</p>
+            <input type="text" class="title" />
+            <input type="date" class="date" />
+            <input type="text" class="description" />
+            <button value="1">Post</button>
+            <button value="">Cancel</button>
+          </form>
+        </dialog>
+        <dialog id="editDialog">
+          <form method="dialog">
+            <p>Edit blog posts</p>
+            <input type="text" class="title" />
+            <input type="date" class="date" />
+            <input type="text" class="description" />
+            <button value="1">Save</button>
+            <button value="">Cancel</button>
+          </form>
+        </dialog>
+        <dialog id="deleteDialog">
+          <form method="dialog">
+            <p>Do you want to delete this post ?</p>
+            <button value="1">Yes</button>
+            <button value="">No</button>
+          </form>
+        </dialog>
+      </div>
+    </main>
+    <footer>
+      <p class="copyright">
+        Build with ❤️ by
+        <a
+          href="https://github.com/mattpilleul"
+          target="_blank"
+          rel="noreferrer"
+          id="github"
+          >Matt</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

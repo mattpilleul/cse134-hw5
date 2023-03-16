@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matthieu Pilleul - Native Dialogs</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#000000" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.5/purify.js"
+      integrity="sha512-imWtAkvkuIjQ+Y/esLu1xudz2A2zyRZ/ePZxcM7k2Izy20rgin5TdAYj/zm3Er9weQoRvL47LUUKPvohsu4Obw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DGV1YKT1ZB"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DGV1YKT1ZB");
+    </script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html"
+        ><img
+          src="assets/img/logofinal-sombre.png"
+          class="logo"
+          alt="Matthieu Logo"
+      /></a>
+      <input type="checkbox" id="toggleMenu" />
+      <nav>
+        <label class="navbar-toggle" for="toggleMenu">
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li>
+            <a href="index.html#testimonials">Testimonials</a>
+          </li>
+          <li><a href="nativedialogs.html">Native</a></li>
+          <li><a href="customdialog.html">Custom</a></li>
+          <div id="dropDown">
+            <li><a>Crud</a></li>
+            <div id="dropDownContent">
+              <li class="itemDropDown"><a href="crud.html">Basic</a></li>
+              <li class="itemDropDown"><a href="styledcrud.html">Styled</a></li>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="nativeDialogs">
+        <div class="simpleDialogs">
+          <input type="button" class="dialogButton" id="alert" value="Alert" />
+          <input
+            type="button"
+            class="dialogButton"
+            id="confirm"
+            value="Confirm"
+          />
+          <input
+            type="button"
+            class="dialogButton"
+            id="prompt"
+            value="Prompt"
+          />
+          <input
+            type="button"
+            class="dialogButton"
+            id="saferPrompt"
+            value="Safer Prompt"
+          />
+        </div>
+        <h1>
+          <output id="answerUser"></output>
+        </h1>
+        <script>
+          const onClearAlert = () => {
+            document.getElementById("answerUser").innerText = "";
+            setTimeout(() => onClickAlert(), 300);
+          };
+
+          const onClickAlert = () => {
+            alert(
+              "Welcome to my portfolio website ! Fill free to contact me by email 👋"
+            );
+          };
+
+          const onClearConfirm = () => {
+            document.getElementById("answerUser").innerText = "";
+            setTimeout(() => onClickConfirm(), 300);
+          };
+
+          const onClickConfirm = () => {
+            let answer = confirm("Do you want to work with me ?");
+            if (!answer) {
+              document.getElementById(
+                "answerUser"
+              ).innerText = `The value returned by the confirm method is : ${answer}\n
+                    Oh, too bade 😢\n Probably next time.`;
+            } else {
+              document.getElementById(
+                "answerUser"
+              ).innerText = `The value returned by the confirm method is : ${answer}\n
+                    Great ! Let's start 😎`;
+            }
+          };
+
+          const onClearPrompt = () => {
+            document.getElementById("answerUser").innerText = "";
+            setTimeout(() => onClickPrompt(), 300);
+          };
+
+          const onClickPrompt = () => {
+            let will = prompt(
+              "Do you want to work with me ?",
+              "Yes ! I'm looking to build an e-commerce website"
+            );
+            if (will) {
+              document.getElementById(
+                "answerUser"
+              ).innerText = `User message is the following : \n"${will}"`;
+            } else if (will == "") {
+              alert(
+                "User did not enter anything.\nI'm not sure about your answer, can you tell me again !"
+              );
+              return onClickPrompt();
+            } else {
+              document.getElementById("answerUser").innerText =
+                "User did not enter anything.\nProbably an error, hope someone will soon want to work with me !";
+            }
+          };
+
+          const onClearSaferPrompt = () => {
+            document.getElementById("answerUser").innerText = "";
+            setTimeout(() => onClickSaferPrompt(), 300);
+          };
+
+          const onClickSaferPrompt = () => {
+            alert(
+              "To avoid any attacks on my small website, I'm currently purifying inputs 🪄"
+            );
+            let will = prompt(
+              "Do you want to work with me ?",
+              "Yes ! I'm looking to build an e-commerce website"
+            );
+            let clean = DOMPurify.sanitize(will);
+            if (will == "") {
+              alert(
+                "User did not enter anything.\nI'm not sure about your answer, can you tell me again !"
+              );
+              return onClickPrompt();
+            } else if (will) {
+              document.getElementById(
+                "answerUser"
+              ).innerText = `User message is the following : \n"${clean}"`;
+            } else {
+              document.getElementById("answerUser").innerText =
+                "User did not enter anything.\nProbably an error, hope someone will soon want to work with me !";
+            }
+          };
+
+          document
+            .getElementById("alert")
+            .addEventListener("click", onClearAlert);
+          document
+            .getElementById("confirm")
+            .addEventListener("click", onClearConfirm);
+          document
+            .getElementById("prompt")
+            .addEventListener("click", onClearPrompt);
+          document
+            .getElementById("saferPrompt")
+            .addEventListener("click", onClearSaferPrompt);
+        </script>
+      </section>
+    </main>
+    <footer>
+      <p class="copyright">
+        Build with ❤️ by
+        <a
+          href="https://github.com/mattpilleul"
+          target="_blank"
+          rel="noreferrer"
+          id="github"
+          >Matt</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

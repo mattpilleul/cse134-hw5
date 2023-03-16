@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matthieu Pilleul - Custom Dialogs</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#000000" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.5/purify.js"
+      integrity="sha512-imWtAkvkuIjQ+Y/esLu1xudz2A2zyRZ/ePZxcM7k2Izy20rgin5TdAYj/zm3Er9weQoRvL47LUUKPvohsu4Obw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DGV1YKT1ZB"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DGV1YKT1ZB");
+    </script>
+    <script
+      defer
+      type="text/javascript"
+      src="assets/js/customdialog.js"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html"
+        ><img
+          src="assets/img/logofinal-sombre.png"
+          class="logo"
+          alt="Matthieu Logo"
+      /></a>
+      <input type="checkbox" id="toggleMenu" />
+      <nav>
+        <label class="navbar-toggle" for="toggleMenu">
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li>
+            <a href="index.html#testimonials">Testimonials</a>
+          </li>
+          <li><a href="nativedialogs.html">Native</a></li>
+          <li><a href="customdialog.html">Custom</a></li>
+          <div id="dropDown">
+            <li><a>Crud</a></li>
+            <div id="dropDownContent">
+              <li class="itemDropDown"><a href="crud.html">Basic</a></li>
+              <li class="itemDropDown"><a href="styledcrud.html">Styled</a></li>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="nativeDialogs">
+        <div class="simpleDialogs">
+          <input type="button" class="dialogButton" id="alert" value="Alert" />
+          <input
+            type="button"
+            class="dialogButton"
+            id="confirm"
+            value="Confirm"
+          />
+          <input
+            type="button"
+            class="dialogButton"
+            id="prompt"
+            value="Prompt"
+          />
+        </div>
+        <h1>
+          <output id="answerUser"></output>
+        </h1>
+        <dialog id="alertDialog">
+          <header>
+            <h2 class="header">This is an alert !</h2>
+          </header>
+          <section class="alertMessage">
+            <p>You just arrived on the best website of this year !</p>
+          </section>
+          <footer>
+            <button class="closeDialogFooter" id="alertButton">Confirm</button>
+          </footer>
+        </dialog>
+        <dialog id="confirmDialog">
+          <form method="dialog">
+            <header>
+              <h2 class="header">Little question</h2>
+            </header>
+            <section class="confirmMessage">
+              <p>Do you want to work with me ?</p>
+            </section>
+            <footer>
+              <button class="closeDialogFooter" id="cancelButton">No</button>
+              <button id="confirmButton">Yes</button>
+            </footer>
+          </form>
+        </dialog>
+        <dialog id="promptDialog">
+          <form method="dialog">
+            <header>
+              <h2 class="header">What bring's you today !</h2>
+            </header>
+            <section class="promptMessage">
+              <p class="questionTitle">
+                Do you want to work with me ? (Please describe your needs)
+              </p>
+              <input
+                id="answerText"
+                type="text"
+                size="50"
+                placeholder="Yes ! I'm looking to build an e-commerce website"
+              />
+            </section>
+            <footer>
+              <button class="closeDialogFooter" id="promptCancelButton">
+                No
+              </button>
+              <button id="submitButton">Yes</button>
+            </footer>
+          </form>
+        </dialog>
+      </section>
+    </main>
+    <footer>
+      <p class="copyright">
+        Build with ❤️ by
+        <a
+          href="https://github.com/mattpilleul"
+          target="_blank"
+          rel="noreferrer"
+          id="github"
+          >Matt</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

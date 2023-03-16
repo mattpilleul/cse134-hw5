@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matthieu Pilleul - Method Test</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#000000" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.5/purify.js"
+      integrity="sha512-imWtAkvkuIjQ+Y/esLu1xudz2A2zyRZ/ePZxcM7k2Izy20rgin5TdAYj/zm3Er9weQoRvL47LUUKPvohsu4Obw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/84ab2ba49c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="text/javascript" src="assets/js/methodtest.js"></script>
+    <style>
+      input[type="text"],
+      input[type="number"],
+      textarea {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .terminalOutput {
+        background-color: black;
+        background-image: radial-gradient(rgb(52, 211, 153, 0.65), black 120%);
+        height: auto;
+        width: auto;
+        color: white;
+        font: 1.3rem Inconsolata, monospace;
+        text-shadow: 0 0 5px #c8c8c8;
+        white-space: pre-wrap;
+        word-break: break-all;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      .terminalOutput::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: auto;
+        background: repeating-linear-gradient(
+          0deg,
+          rgba(black, 0.15),
+          rgba(black, 0.15) 1px,
+          transparent 1px,
+          transparent 2px
+        );
+      }
+
+      .terminalOutput::selection {
+        background: #0080ff;
+        text-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html"
+        ><img
+          src="assets/img/logofinal-sombre.png"
+          class="logo"
+          alt="Matthieu Logo"
+      /></a>
+      <input type="checkbox" id="toggleMenu" />
+      <nav>
+        <label class="navbar-toggle" for="toggleMenu">
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li>
+            <a href="#testimonials">Testimonials</a>
+          </li>
+          <li><a href="methodtest.html">Method Test</a></li>
+          <div id="dropDown">
+            <li><a>Web Components</a></li>
+            <div id="dropDownContent">
+              <li class="itemDropDown">
+                <a href="webcomponent.html">Basic HTML Custom</a>
+              </li>
+              <li class="itemDropDown">
+                <a href="extracredit.html">Frameworked Custom</a>
+              </li>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form id="form">
+        <div>
+          <label for="id" style="color: white">Record ID:</label>
+          <input type="number" name="id" placeholder="Id" />
+        </div>
+        <div>
+          <label for="article_name" style="color: white">Article Name:</label>
+          <input type="text" name="article_name" placeholder="Name" />
+        </div>
+        <div>
+          <label for="article_body" style="color: white">Article Body:</label>
+          <textarea name="article_body" placeholder="Body"></textarea>
+        </div>
+        <input name="article_date" hidden />
+        <br />
+        <div class="simpleDialogs">
+          <input type="submit" value="Post" id="postBtn" class="dialogButton" />
+          <input type="submit" value="Get" id="getBtn" class="dialogButton" />
+          <input type="submit" value="Put" id="putBtn" class="dialogButton" />
+          <input
+            type="submit"
+            value="Delete"
+            id="deleteBtn"
+            class="dialogButton"
+          />
+        </div>
+        <section id="outputTerminal">
+          <label style="color: white">Output:</label>
+          <output id="response" style="white-space: pre-wrap" />
+        </section>
+      </form>
+    </main>
+    <footer>
+      <p class="copyright">
+        Build with ❤️ by
+        <a
+          href="https://github.com/mattpilleul"
+          target="_blank"
+          rel="noreferrer"
+          id="github"
+          >Matt</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

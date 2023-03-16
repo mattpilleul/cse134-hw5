@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matthieu Pilleul - Styled Blog</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/styledcrud.css" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#000000" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.5/purify.js"
+      integrity="sha512-imWtAkvkuIjQ+Y/esLu1xudz2A2zyRZ/ePZxcM7k2Izy20rgin5TdAYj/zm3Er9weQoRvL47LUUKPvohsu4Obw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DGV1YKT1ZB"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DGV1YKT1ZB");
+    </script>
+    <script defer type="text/javascript" src="assets/js/styledcrud.js"></script>
+    <script
+      src="https://kit.fontawesome.com/84ab2ba49c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html"
+        ><img
+          src="assets/img/logofinal-sombre.png"
+          class="logo"
+          alt="Matthieu Logo"
+      /></a>
+      <input type="checkbox" id="toggleMenu" />
+      <nav>
+        <label class="navbar-toggle" for="toggleMenu">
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li>
+            <a href="index.html#testimonials">Testimonials</a>
+          </li>
+          <li><a href="nativedialogs.html">Native</a></li>
+          <li><a href="customdialog.html">Custom</a></li>
+          <div id="dropDown">
+            <li><a>Crud</a></li>
+            <div id="dropDownContent">
+              <li class="itemDropDown"><a href="crud.html">Basic</a></li>
+              <li class="itemDropDown"><a href="styledcrud.html">Styled</a></li>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <h1>
+          Blog Posts -
+          <span>(To create, press floating button)</span>
+        </h1>
+        <div class="container" id="blogPosts"></div>
+        <br />
+        <dialog id="addDialog">
+          <form method="dialog">
+            <header>
+              <h2 class="header">New blog posts</h2>
+            </header>
+            <section class="addMessage">
+              <p class="questionTitle">
+                Ready to post a new blog ? Let's go ✅
+              </p>
+              <label>Post Title</label>
+              <input
+                type="text"
+                class="title"
+                placeholder="React Native News"
+              />
+              <label>Post Date</label>
+              <input type="date" class="date" />
+              <label>Post Description</label>
+              <input
+                type="text"
+                class="description"
+                placeholder="Let's talk about React Native ..."
+              />
+            </section>
+            <footer>
+              <button value="" id="cancelButton">Cancel</button>
+              <button value="1" id="confirmButton">Post</button>
+            </footer>
+          </form>
+        </dialog>
+        <dialog id="editDialog">
+          <form method="dialog">
+            <header>
+              <h2 class="header">Edit post blog</h2>
+            </header>
+            <section class="deleteMessage">
+              <p class="questionTitle">
+                A mistake ? Just edit the field concerned !
+              </p>
+              <label>Post Title</label>
+              <input
+                type="text"
+                class="title"
+                placeholder="React Native News"
+              />
+              <label>Post Date</label>
+              <input type="date" class="date" />
+              <label>Post Description</label>
+              <input
+                type="text"
+                class="description"
+                placeholder="Let's talk about React Native ..."
+              />
+            </section>
+            <footer>
+              <button value="" id="cancelButton">Cancel</button>
+              <button value="1" id="confirmButton">Save</button>
+            </footer>
+          </form>
+        </dialog>
+        <dialog id="deleteDialog">
+          <form method="dialog">
+            <header>
+              <h2 class="header">Post Deletion</h2>
+            </header>
+            <section class="deleteMessage">
+              <p class="questionTitle">Do you want to delete this post ?</p>
+            </section>
+            <footer>
+              <button value="" id="cancelButton">No</button>
+              <button value="1" id="confirmButton">Yes</button>
+            </footer>
+          </form>
+        </dialog>
+      </div>
+      <div id="container-floating">
+        <div class="nd1 nds" id="addButton">
+          <span class="letter" role="img" aria-label="RolledNewsPaper">🗞️</span>
+        </div>
+        <div id="floating-button">
+          <p class="plus">+</p>
+          <span class="edit" role="img" aria-label="CheckMark">✔️</span>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p class="copyright">
+        Build with ❤️ by
+        <a
+          href="https://github.com/mattpilleul"
+          target="_blank"
+          rel="noreferrer"
+          id="github"
+          >Matt</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

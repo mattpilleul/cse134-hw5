@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matthieu Pilleul - Web Component</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#000000" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.5/purify.js"
+      integrity="sha512-imWtAkvkuIjQ+Y/esLu1xudz2A2zyRZ/ePZxcM7k2Izy20rgin5TdAYj/zm3Er9weQoRvL47LUUKPvohsu4Obw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/84ab2ba49c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html"
+        ><img
+          src="assets/img/logofinal-sombre.png"
+          class="logo"
+          alt="Matthieu Logo"
+      /></a>
+      <input type="checkbox" id="toggleMenu" />
+      <nav>
+        <label class="navbar-toggle" for="toggleMenu">
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li>
+            <a href="#testimonials">Testimonials</a>
+          </li>
+          <li><a href="methodtest.html">Method Test</a></li>
+          <div id="dropDown">
+            <li><a>Web Components</a></li>
+            <div id="dropDownContent">
+              <li class="itemDropDown">
+                <a href="webcomponent.html">Basic HTML Custom</a>
+              </li>
+              <li class="itemDropDown">
+                <a href="extracredit.html">Frameworked Custom</a>
+              </li>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="simpleDialogs">
+        <div id="reactContainer"></div>
+
+        <div id="vueContainer">
+          <button class="dialogButton" style="width: 100%" @click="count += 1">
+            Vue.Js Times Clicked: {{count}}
+          </button>
+        </div>
+      </section>
+
+      <!-- Load React. -->
+      <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+      <script
+        crossorigin
+        src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"
+      ></script>
+      <script
+        crossorigin
+        src="https://unpkg.com/react-dom/umd/react-dom.development.js"
+      ></script>
+      <!-- Load our React component. -->
+      <script>
+        "use strict";
+
+        function LikeButton() {
+          const [count, setCount] = React.useState(0);
+
+          return React.createElement(
+            "button",
+            {
+              className: "dialogButton",
+              style: { width: "100%" },
+              onClick: () => setCount((prevCount) => prevCount + 1),
+            },
+            `React.JS Times Clicked: ${count}`
+          );
+        }
+
+        const rootNode = document.getElementById("reactContainer");
+        const root = ReactDOM.createRoot(rootNode);
+        root.render(React.createElement(LikeButton));
+      </script>
+      <script>
+        new Vue({
+          el: "#vueContainer",
+          data: {
+            count: 0,
+          },
+        });
+      </script>
+    </main>
+    <footer>
+      <p class="copyright">
+        Build with ❤️ by
+        <a
+          href="https://github.com/mattpilleul"
+          target="_blank"
+          rel="noreferrer"
+          id="github"
+          >Matt</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

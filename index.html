@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matthieu Pilleul</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#000000" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.5/purify.js"
+      integrity="sha512-imWtAkvkuIjQ+Y/esLu1xudz2A2zyRZ/ePZxcM7k2Izy20rgin5TdAYj/zm3Er9weQoRvL47LUUKPvohsu4Obw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-DGV1YKT1ZB"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-DGV1YKT1ZB");
+    </script>
+    <script
+      src="https://kit.fontawesome.com/84ab2ba49c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html"
+        ><img
+          src="assets/img/logofinal-sombre.png"
+          class="logo"
+          alt="Matthieu Logo"
+      /></a>
+      <input type="checkbox" id="toggleMenu" />
+      <nav>
+        <label class="navbar-toggle" for="toggleMenu">
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+          <span class="burgerLayer"></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li>
+            <a href="#testimonials">Testimonials</a>
+          </li>
+          <li><a href="methodtest.html">Native</a></li>
+          <div id="dropDown">
+            <li><a>Web Components</a></li>
+            <div id="dropDownContent">
+              <li class="itemDropDown">
+                <a href="webcomponent.html">Basic HTML Custom</a>
+              </li>
+              <li class="itemDropDown">
+                <a href="extracredit.html">Frameworked Custom</a>
+              </li>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="about">
+        <div>
+          <h1>My name is <span class="name">Matthieu</span>,</h1>
+          <br />
+          <p>
+            I am a highly skilled web and mobile JavaScript developer with
+            expertise in DevOps and architecture. With a focus on performance,
+            scalability, and security, I develop and deploy web and mobile
+            applications using JavaScript. I have extensive knowledge of DevOps
+            best practices, including continuous integration and delivery,
+            containerization, and cloud-based infrastructure. I am passionate
+            about decentralized concepts and Web 3.0, staying up to date with
+            the latest developments in these areas.
+            <br />
+            <br />
+            With a strong background in UI/UX design, I create user-centered
+            designs for web and mobile applications. I am a proven team player
+            and collaborator, with a can-do attitude and attention to detail and
+            organization.
+          </p>
+        </div>
+        <img src="assets/img/coding.svg" alt="Matthieu Profile Picture" />
+      </section>
+      <section id="projects">
+        <hr />
+        <br />
+        <h1>Projects 🔭</h1>
+        <br />
+        <div class="projects-showcase">
+          <div class="projectContainer">
+            <img
+              src="assets/img/project-1.gif"
+              alt="Project 1 - React Reserve"
+              style="
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+              "
+            />
+            <div class="overlayProject">
+              <div class="projectDesc">
+                <h2 class="projectTechno">MERN Stack</h2>
+                <h1 class="projectTitle">React Reserve</h1>
+                <span class="projectTextDesc"
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="projectContainer">
+            <img
+              src="assets/img/project-2.gif"
+              alt="Project 2 - React Tracks"
+              style="
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+              "
+            />
+            <div class="overlayProject">
+              <div class="projectDesc">
+                <h2 class="projectTechno">React and Python</h2>
+                <h1 class="projectTitle">React Tracks</h1>
+                <span class="projectTextDesc"
+                  >Lorem ipsum dolor sit amet consectetur.</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="projectContainer">
+            <img
+              src="assets/img/project-3.gif"
+              alt="Project 3 - DevChat"
+              style="
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+              "
+            />
+            <div class="overlayProject">
+              <div class="projectDesc">
+                <h2 class="projectTechno">React and Firebase</h2>
+                <h1 class="projectTitle">DevChat</h1>
+                <span class="projectTextDesc"
+                  >Lorem ipsum dolor sit amet consectetur adipisicing
+                  elit.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <br />
+      <h1>Skills 🔥</h1>
+      <br />
+      <section class="skills" id="skills">
+        <div id="frontend">
+          <h2>Web / Mobile <span>(Front End)</span></h2>
+          <br />
+          <p>
+            Over the past 3 years, I have been able to collaborate on several
+            projects as well as work on more personal projects, which have
+            allowed me to gain expertise in this field. Today I have been
+            working on the development of a medical replacement solution for
+            more than 2 years, including several dashboards, a landing page,
+            maintenance services, status pages, several APIs and a mobile
+            application. More recently I have been working on :
+          </p>
+          <br />
+          <ul>
+            <li>
+              A mobile application for managing works councils, where users can
+              purchase content with their employee benefits.
+              <br /><br />
+              Technologies : React Native, Swift, Firebase, SQL, NodeJS
+            </li>
+          </ul>
+        </div>
+        <div id="backend">
+          <h2>Server <span>(Back End)</span></h2>
+          <br />
+          <p>
+            Concurrently of developing websites and mobile applications, I had
+            several opportunities of working on the server side of projects. I
+            discoverd a lot of cool and funny stuffs :
+          </p>
+          <br />
+          <ul>
+            <li>
+              Created a full service of API for a medical replacement mobile
+              app. Including services status page, push notifications based on
+              geofencing, multi-threads databases.
+              <br />
+            </li>
+            <li>
+              Developed an entire backend for a e-commerce platform, that is
+              used today in 2 french shops ! Customer can browse the website and
+              can then order his favorite sneaker pair.
+              <br /><br />
+              Technologies : Mainly NodeJS, Express Framework, MongoDB
+            </li>
+          </ul>
+        </div>
+      </section>
+      <hr />
+      <section class="testimonials" id="testimonials">
+        <br />
+        <h1>Testimonials 👨🏼‍💻</h1>
+        <br />
+        <figure class="testimonialContainer">
+          <figcaption>
+            <blockquote>
+              <p>
+                Been working with Matthieu for more than 2 years, he is an
+                excellent developer, very kind.
+              </p>
+            </blockquote>
+            <h3>Frédérique Duflo</h3>
+            <h4>RemplaDoc</h4>
+          </figcaption>
+        </figure>
+        <figure class="testimonialContainer">
+          <figcaption>
+            <blockquote>
+              <p>
+                Excellent developer, always ready to listen and strong in
+                innovative proposals. I recommend.
+              </p>
+            </blockquote>
+            <h3>David Elbaz</h3>
+            <h4>Davidkickz</h4>
+          </figcaption>
+        </figure>
+        <figure class="testimonialContainer">
+          <figcaption>
+            <blockquote>
+              <p>
+                A young, dynamic and ambitious profile, full of good things to
+                come for him. Keep going 💪
+              </p>
+            </blockquote>
+            <h3>Yohan Bentolila</h3>
+            <h4>Insideboard</h4>
+          </figcaption>
+        </figure>
+      </section>
+      <div id="container-floating">
+        <div class="nd2 nds">
+          <img class="reminder" />
+          <span class="letter" role="img" aria-label="SunWithFace">🌞</span>
+        </div>
+        <div class="nd1 nds">
+          <span class="letter" role="img" aria-label="NewMoonFace">🌚</span>
+        </div>
+
+        <div id="floating-button">
+          <p class="plus">+</p>
+          <span class="edit" role="img" aria-label="CheckMark">✔️</span>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p class="copyright">
+        Build with ❤️ by
+        <a
+          href="https://github.com/mattpilleul"
+          target="_blank"
+          rel="noreferrer"
+          id="github"
+          >Matt</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
